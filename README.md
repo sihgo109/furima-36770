@@ -55,7 +55,7 @@
 - has_one :address
 
 
-## address table
+## addresses table
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | -------------------------------|
