@@ -6,7 +6,7 @@ class Item < ApplicationRecord
   belongs_to :charge
   belongs_to :area
   belongs_to :send_day
-  has_one    :order
+  #has_one    :order
   has_one_attached :image
 
   validates :title, :description, :image, presence: true
