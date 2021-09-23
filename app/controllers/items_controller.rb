@@ -27,9 +27,6 @@ class ItemsController < ApplicationController
     if @item.order != nil
       redirect_to root_path
     end
-    unless @item.user_id == current_user.id
-      redirect_to action: :index
-    end
   end
 
   def update
@@ -57,7 +54,7 @@ class ItemsController < ApplicationController
 
   def match_user
     if @item.user_id != current_user.id
-       redirect_to root_path
+      return redirect_to root_path unless @item.order.nil? && current_user.id == @item.user.id
     end
   end
 end
